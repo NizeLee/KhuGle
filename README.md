@@ -28,3 +28,14 @@
   + Projection and view matrices, 3D object rendering
 * 05 KhuGle(Sound Processing)
   + FFT, spectrogram, FIR/IIR filters
+* 06 KhuGle(Image Processing)
+  + Convolution, DCT, image compression
+* 07 KhuGle(Correlation and Clustering)
+  + Pearson correlation, similarity, k-means
+* 08 KhuGle(Regression)
+  + LMS, parameter estimation
+* 09 KhuGle(Performance Evaluation)
+  + Accuracy, presision, recall, f-score, ROC
+* 10 KhuGle(Perceptron)
+* 11 KhuGle(MLP-DNN)
+* 12 KhuGle(CNN)
