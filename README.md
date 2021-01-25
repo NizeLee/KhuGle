@@ -36,6 +36,6 @@
   + LMS, parameter estimation
 * 09 KhuGle(Performance Evaluation)
   + Accuracy, presision, recall, f-score, ROC
-* 10 KhuGle(Perceptron)
-* 11 KhuGle(MLP-DNN)
-* 12 KhuGle(CNN)
+* 10 KhuGle(Perceptron), [1.KhuDaNet-Perceptron](https://github.com/NizeLee/KhuDaNet/tree/main/1.KhuDaNet-Perceptron)
+* 11 KhuGle(MLP-DNN), [2.KhuDaNet-MLP-DNN](https://github.com/NizeLee/KhuDaNet/tree/main/2.KhuDaNet-MLP-DNN)
+* 12 KhuGle(CNN), [3.KhuDaNet-CNN](https://github.com/NizeLee/KhuDaNet/tree/main/3.KhuDaNet-CNN)
