@@ -18,7 +18,7 @@
   + Playing wave sounds
 
 ## Projects
-* '01. KhuGle(Windows Api)
+*01. KhuGle(Windows Api)
   + Window, F11 (full screeen), keyboard and mouse events
 * 02. KhuGle(Game Layout)
   + Scene, layer, sprite (rectangle, ellipse), static move
