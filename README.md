@@ -1,5 +1,5 @@
 # KhuGle
-* KhuGle: Open source platform for game programming and data analysis (Kyung Hee University Data Analysis & Vision Intelligence)
+* KhuGle: Open source platform for game programming and data analysis (Kyung Hee University, Data Analysis & Vision Intelligence)
 * C++, (Game layout, Collision, Physics, Sound/Image Processing, Data analysis)
 
 ## Source file
