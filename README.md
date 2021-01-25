@@ -22,7 +22,7 @@
   + Window, F11 (full screeen), keyboard and mouse events
 * 02 KhuGle(Game Layout)
   + Scene, layer, sprite (rectangle, ellipse), static move
-* 03 KhuGle(Colligision and Physics)
+* 03 KhuGle(Collision and Physics)
   + Circle-to-circle collision, circle-to-line collision, gravity
 * 04 KhuGle(3D Renderging)
   + Projection and view matrices, 3D object rendering
