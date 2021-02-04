@@ -33,7 +33,7 @@
 * 07 KhuGle(Correlation and Clustering)
   + Pearson correlation, similarity, k-means
 * 08 KhuGle(Regression)
-  + LMS, parameter estimation
+  + Least squares, parameter estimation
 * 09 KhuGle(Performance Evaluation)
   + Accuracy, presision, recall, f-score, ROC
 * 10 KhuGle(Perceptron), [1.KhuDaNet-Perceptron](https://github.com/NizeLee/KhuDaNet/tree/main/1.KhuDaNet-Perceptron)
