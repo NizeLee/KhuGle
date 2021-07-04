@@ -3,7 +3,7 @@
 * C++, (Game layout, Collision, Physics, Sound/Image Processing, Data analysis)
 
 ## Lecture note
-*  pdf file [link] (https://github.com/NizeLee/KhuGle/blob/main/Via%20Game%20Programming(20210704).pdf)
+*  pdf file [link](Via%20Game%20Programming(20210704).pdf)
 
 ## Source files
 * Main.cpp
@@ -19,6 +19,10 @@
   + Point, line, rectangle, vector (2D/3D), memory allocation
 * SoundPlayWin.cpp
   + Playing wave sounds
+ 
+## Visual Studio Setting
+  + Project setting(2015)
+<br> <img src="https://github.com/NizeLee/Image-Processing/raw/master/Image_processing_02.png"></img>  
 
 ## Projects
 * 01 KhuGle(Windows Api)
