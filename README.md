@@ -3,7 +3,7 @@
 * C++, (Game layout, Collision, Physics, Sound/Image Processing, Data analysis)
 
 ## Lecture note
-*  pdf file [link] (https://github.com/NizeLee/KhuDaNet/tree/main/1.KhuDaNet-Perceptron)
+*  pdf file [link] (https://github.com/NizeLee/KhuGle/blob/main/Via%20Game%20Programming(20210704).pdf)
 
 ## Source files
 * Main.cpp
