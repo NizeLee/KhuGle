@@ -2,6 +2,9 @@
 * KhuGle: Open source platform for game programming and data analysis (Kyung Hee University, Data Analysis & Vision Intelligence)
 * C++, (Game layout, Collision, Physics, Sound/Image Processing, Data analysis)
 
+## Lecture note
+*  pdf file [link] (https://github.com/NizeLee/KhuDaNet/tree/main/1.KhuDaNet-Perceptron)
+
 ## Source files
 * Main.cpp
   + Main routine for game and data analysis
