@@ -21,8 +21,11 @@
   + Playing wave sounds
  
 ## Visual Studio Setting
-  + Project setting(2015)
-<br> <img src="https://github.com/NizeLee/Image-Processing/raw/master/Image_processing_02.png"></img>  
+* Project setting (Configuration Properties)
+  + Target Platform Version: your platform version
+  + Platform Toolset: Your platform
+  + Character Set: Multi-Byte Character Set
+
 
 ## Projects
 * 01 KhuGle(Windows Api)
