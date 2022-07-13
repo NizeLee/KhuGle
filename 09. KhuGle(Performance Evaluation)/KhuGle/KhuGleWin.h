@@ -50,7 +50,7 @@ public:
 	virtual void Update();
 	void OnPaint();
 
-	void DrawSceneTextPos(char *Text, CKgPoint ptPos);
+	void DrawSceneTextPos(const char *Text, CKgPoint ptPos);
 	void ToggleFpsView();
 
 	CKhuGleWin(int nW, int nH);

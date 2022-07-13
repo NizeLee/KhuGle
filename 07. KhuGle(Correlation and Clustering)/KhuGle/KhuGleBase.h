@@ -38,8 +38,8 @@ struct CKgLine {
 struct CKgRect {
 	int Left, Top, Right, Bottom;
 
-	CKgRect::CKgRect() : Left(0), Top(0), Right(0), Bottom(0) {}
-	CKgRect::CKgRect(int l, int t, int r, int b) : Left(l), Top(t), Right(r), Bottom(b) {}
+	CKgRect() : Left(0), Top(0), Right(0), Bottom(0) {}
+	CKgRect(int l, int t, int r, int b) : Left(l), Top(t), Right(r), Bottom(b) {}
 
 	bool IsRect();
 	int Width();

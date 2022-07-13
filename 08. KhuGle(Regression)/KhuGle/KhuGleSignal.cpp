@@ -291,8 +291,8 @@ bool CKhuGleSignal::SaveBmp(char *FileName)
 
 	unsigned long dwBitsSize;
 
-	unsigned short widthDW = (m_nW*3+3)/4*4;;
-	unsigned short size = widthDW*m_nH;
+	unsigned long widthDW = (m_nW*3+3)/4*4;;
+	unsigned long size = widthDW*m_nH;
 	dwBitsSize = sizeof(BITMAPFILEHEADER_) + sizeof(BITMAPINFOHEADER_) + size;
 
 	BITMAPINFOHEADER_ bmiHeader;
