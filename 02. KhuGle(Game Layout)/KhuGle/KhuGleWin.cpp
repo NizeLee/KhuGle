@@ -338,7 +338,7 @@ void CKhuGleWin::OnPaint()
 	EndPaint(m_hWnd, &ps);
 }
 
-void CKhuGleWin::DrawSceneTextPos(char *Text, CKgPoint ptPos)
+void CKhuGleWin::DrawSceneTextPos(const char *Text, CKgPoint ptPos)
 {
 	int nTextHeight = 25;
 
