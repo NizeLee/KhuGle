@@ -80,6 +80,7 @@ void CKhuGleSignal::ReadWave(char *FileName)
 	{
 		short int Buf;
 		fread(&m_Samples[i], nBytePerSample, 1, fp);
+		if(nBytePerSample == 1) m_Samples[i] = (m_Samples[i]-128)*32767/127;
 		if(header.numChannels == 2)
 			fread(&Buf, nBytePerSample, 1, fp);
 	}
@@ -290,8 +291,8 @@ bool CKhuGleSignal::SaveBmp(char *FileName)
 
 	unsigned long dwBitsSize;
 
-	unsigned short widthDW = (m_nW*3+3)/4*4;;
-	unsigned short size = widthDW*m_nH;
+	unsigned long widthDW = (m_nW*3+3)/4*4;;
+	unsigned long size = widthDW*m_nH;
 	dwBitsSize = sizeof(BITMAPFILEHEADER_) + sizeof(BITMAPINFOHEADER_) + size;
 
 	BITMAPINFOHEADER_ bmiHeader;

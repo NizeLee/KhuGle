@@ -6,6 +6,19 @@
 #include "KhuGleSignal.h"
 #include <iostream>
 
+#pragma warning(disable:4996)
+
+#define _CRTDBG_MAP_ALLOC
+#include <cstdlib>
+#include <crtdbg.h>
+
+#ifdef _DEBUG
+#ifndef DBG_NEW
+#define DBG_NEW new ( _NORMAL_BLOCK , __FILE__ , __LINE__ )
+#define new DBG_NEW
+#endif
+#endif  // _DEBUG
+
 class CKhuGleSoundLayer : public CKhuGleLayer
 {
 public:
@@ -13,19 +26,24 @@ public:
 	int m_nViewType;
 
 	CKhuGleSoundLayer(int nW, int nH, KgColor24 bgColor, CKgPoint ptPos = CKgPoint(0, 0));
-	void SetBackgroundImage(int nW, int nH, KgColor24 bgColor);
+	void DrawBackgroundImage();
 };
 
 CKhuGleSoundLayer::CKhuGleSoundLayer(int nW, int nH, KgColor24 bgColor, CKgPoint ptPos)
 	: CKhuGleLayer(nW, nH, bgColor, ptPos)
 {
 	m_nViewType = 0;
-	m_bgColor = bgColor;
 }
 
-void CKhuGleSoundLayer::SetBackgroundImage(int nW, int nH, KgColor24 bgColor)
+void CKhuGleSoundLayer::DrawBackgroundImage()
 {
-	CKhuGleLayer::SetBackgroundImage(nW, nH, bgColor);
+	for(int y = 0 ; y < m_nH ; y++)
+		for(int x = 0 ; x < m_nW ; x++)
+		{
+			m_ImageBgR[y][x] = KgGetRed(m_bgColor);
+			m_ImageBgG[y][x] = KgGetGreen(m_bgColor);
+			m_ImageBgB[y][x] = KgGetBlue(m_bgColor);
+		}
 
 	if(m_nViewType == 0 && m_Sound.m_Samples)
 	{
@@ -121,12 +139,12 @@ CSoundProcessing::CSoundProcessing(int nW, int nH, char *SoundPath) : CKhuGleWin
 
 	m_pSoundLayer = new CKhuGleSoundLayer(600, 200, KG_COLOR_24_RGB(150, 150, 200), CKgPoint(20, 30));
 	m_pSoundLayer->m_Sound.ReadWave(SoundPath);
-	m_pSoundLayer->SetBackgroundImage(600, 200, m_pSoundLayer->m_bgColor);
+	m_pSoundLayer->DrawBackgroundImage();
 	m_pScene->AddChild(m_pSoundLayer);
 
 	m_pSoundLayer->m_Sound.MakeSpectrogram();
 
-	m_pSoundLine = new CKhuGleSprite(GP_STYPE_LINE, GP_CTYPE_KINEMATIC, CKgLine(CKgPoint(0, 0), CKgPoint(0, 199)), 
+	m_pSoundLine = new CKhuGleSprite(GP_STYPE_LINE, GP_CTYPE_KINEMATIC, CKgLine(CKgPoint(0, 0), CKgPoint(0, m_pSoundLayer->m_nH)), 
 		KG_COLOR_24_RGB(255, 0, 0), false, 0);
 	m_pSoundLayer->AddChild(m_pSoundLine);
 }
@@ -144,7 +162,25 @@ void CSoundProcessing::Update()
 		if(m_bKeyPressed['F']) m_pSoundLayer->m_nViewType = 1;
 		if(m_bKeyPressed['L']) m_pSoundLayer->m_nViewType = 2;
 
-		m_pSoundLayer->SetBackgroundImage(m_pSoundLayer->m_nW, m_pSoundLayer->m_nH, m_pSoundLayer->m_bgColor);
+		m_pSoundLayer->DrawBackgroundImage();
+	}
+
+	if(m_bKeyPressed['M'])
+	{
+		int nLength = 3;
+		for(int i = 0 ; i < m_pSoundLayer->m_Sound.m_nSampleLength-nLength ; ++i)
+		{
+			for(int ii = 1 ; ii < nLength ; ++ii)
+				m_pSoundLayer->m_Sound.m_Samples[i] += m_pSoundLayer->m_Sound.m_Samples[i+ii];
+
+			m_pSoundLayer->m_Sound.m_Samples[i] /= nLength;
+		}
+
+		m_pSoundLayer->m_Sound.MakeSpectrogram();
+
+		m_pSoundLayer->DrawBackgroundImage();
+
+		m_bKeyPressed['M'] = false;
 	}
 
 	if(m_bKeyPressed['P'])

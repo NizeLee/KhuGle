@@ -604,7 +604,7 @@ double GetMse(unsigned char **I, unsigned char **O, int nW, int nH)
 	double Mse = 0;
 	for(int y = 0 ; y < nH ; ++y)
 		for(int x = 0 ; x < nW ; ++x)
-			Mse = (I[y][x] - O[y][x])*(I[y][x] - O[y][x]);
+			Mse += (I[y][x] - O[y][x])*(I[y][x] - O[y][x]);
 
 	Mse /= nW*nH;
 	return Mse;

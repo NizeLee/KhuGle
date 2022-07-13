@@ -23,6 +23,6 @@ public:
 	void ResetBackgroundImage();
 	void SetBgColor(KgColor24 bgColor);
 
-	void Render();
+	virtual void Render();
 };
 
