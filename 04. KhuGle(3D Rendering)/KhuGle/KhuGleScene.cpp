@@ -94,6 +94,7 @@ void CKhuGleScene::Render()
 
 			int nLen = std::min(Layer->m_nW, m_nW-Layer->m_ptPos.X);
 
+			if(nLen <= 0) continue;
 			memcpy(m_ImageR[y+Layer->m_ptPos.Y] + Layer->m_ptPos.X, Layer->m_ImageR[y], nLen);
 			memcpy(m_ImageG[y+Layer->m_ptPos.Y] + Layer->m_ptPos.X, Layer->m_ImageG[y], nLen);
 			memcpy(m_ImageB[y+Layer->m_ptPos.Y] + Layer->m_ptPos.X, Layer->m_ImageB[y], nLen);

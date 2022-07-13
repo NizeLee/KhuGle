@@ -5,6 +5,19 @@
 #include "KhuGleWin.h"
 #include <iostream>
 
+#pragma warning(disable:4996)
+
+#define _CRTDBG_MAP_ALLOC
+#include <cstdlib>
+#include <crtdbg.h>
+
+#ifdef _DEBUG
+#ifndef DBG_NEW
+#define DBG_NEW new ( _NORMAL_BLOCK , __FILE__ , __LINE__ )
+#define new DBG_NEW
+#endif
+#endif  // _DEBUG
+
 struct CKgTriangle{
 	CKgVector3D v0, v1, v2;
 
@@ -42,8 +55,8 @@ CKhuGle3DSprite::CKhuGle3DSprite(int nW, int nH, double Fov, double Far, double 
 
 	m_ProjectionMatrix[0][0] = (double)nH/(double)nW * 1./tan(Fov/2.);
 	m_ProjectionMatrix[1][1] = 1./tan(Fov/2.);
-	m_ProjectionMatrix[2][2] = Far / (Far - Near);
-	m_ProjectionMatrix[2][3] = (-Far * Near) / (Far - Near);
+	m_ProjectionMatrix[2][2] = (-Near-Far) / (Near-Far);
+	m_ProjectionMatrix[2][3] = 2.*(Far * Near) / (Near-Far);
 	m_ProjectionMatrix[3][2] = 1.;
 	m_ProjectionMatrix[3][3] = 0.;	
 	

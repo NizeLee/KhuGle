@@ -11,10 +11,6 @@
 #include "KhuGleScene.h"
 #include "KhuGleComponent.h"
 
-void PlayWave(short int *Sound, int nSampleRate, int nLen);
-void StopWave();
-void GetPlaybackPosotion(unsigned long *Rate);
-
 class CKhuGleWin;
 void KhuGleWinInit(CKhuGleWin *pApplication);
 
@@ -50,7 +46,7 @@ public:
 	virtual void Update();
 	void OnPaint();
 
-	void DrawSceneTextPos(char *Text, CKgPoint ptPos);
+	void DrawSceneTextPos(const char *Text, CKgPoint ptPos);
 	void ToggleFpsView();
 
 	CKhuGleWin(int nW, int nH);
